@@ -19,3 +19,20 @@ import node as n
 #studentNumber-11358887
 #course-CMPT145
 
+import node as n
+import a3q2
+from a3q2 import to_string
+def sumnc(node_chain):
+    """
+    Purpose:
+    Given a node chain with numeric data values, calculate
+    the sum of the data values.
+    Pre-conditions:
+    :param node_chain: a node-chain, possibly empty, containing
+    numeric data values
+    Post-condition:
+    None
+    Return
+    :return: the sum of the data values in the node chain
+    """
+
