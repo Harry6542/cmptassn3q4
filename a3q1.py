@@ -48,3 +48,5 @@ def main():
             break
         else:
             print("Invalid command. Type 'help' to see available actions.")
+if __name__ == "__main__":
+    main()
