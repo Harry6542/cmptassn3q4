@@ -22,4 +22,12 @@ def to_string(node_chain):
         Create a string representation of the node chain. E.g.,
         [ 1 | *-]-->[ 2 | *-]-->[ 3 | / ]
         """
+    # special case: empty node chain
+    if node_chain is None:
+        return 'EMPTY'
+
+    # walk along the chain
+    walker = node_chain
+    result = '[ {} |'.format(str(walker.get_data()))
+
 
