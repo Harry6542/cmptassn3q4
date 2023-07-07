@@ -34,5 +34,7 @@ def to_string(node_chain):
         value = walker.get_data()
         # represent the next with an arrow-like figure
         result += ' *-]-->[ {} |'.format(str(value))
-
+        # at the end of the chain, use '/'
+        result += ' / ]'
+        return result
 
