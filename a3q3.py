@@ -98,4 +98,15 @@ def replace_in(node_chain, target, replacement):
         if current.get_data() == target:
             current.set_data(replacement)
         current = current.get_next()
-
+chain1 = n . Node (1 ,
+n . Node (1 ,
+n . Node (9)))
+chain2 = n . Node (2 ,
+n . Node (7 ,
+n . Node (15)))
+print ( ' chain1 before : ' , to_string ( chain1 ))
+replace_in ( chain1 , 1 , 10)
+print ( ' chain1 after : ' , to_string ( chain1 ))
+print ( ' chain2 before : ' , to_string( chain2 ))
+replace_in ( chain2 , 7 , 1007)
+print ( ' chain2 after : ' , to_string ( chain2 ))
