@@ -62,4 +62,19 @@ def count_in(node_chain, value):
     Return:
     :return: The number times the value appears in the node chain
     """
+    count = 0
+    current = node_chain
 
+    while current is not None:
+        if current.get_data() == value:
+            count += 1
+        current = current.get_next()
+
+    return count
+
+
+empty_chain = None
+chain = n.Node(1, n.Node(2, n.Node(1)))
+
+print('empty chain has', count_in(empty_chain, 1), 'occurrences of the value 1')
+print('chain has', count_in(chain, 1), 'occurrences of the value 1')
