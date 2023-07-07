@@ -52,4 +52,14 @@ empty_chain = None
 chain = n.Node(1, n.Node(2, n.Node(3)))
 print('empty chain has the sum', sumnc(empty_chain))
 print('chain has the sum', sumnc(chain))
+def count_in(node_chain, value):
+    """
+    Purpose:
+    Counts the number of times a value appears in a node chain
+    Pre-conditions:
+    :param node_chain: a node chain, possibly empty
+    :param value: a data value
+    Return:
+    :return: The number times the value appears in the node chain
+    """
 
