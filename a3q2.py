@@ -14,4 +14,8 @@
 #NSID-ozc189
 #studentNumber-11358887
 #course-CMPT145
+import node as n
+
+
+def to_string(node_chain):
 
