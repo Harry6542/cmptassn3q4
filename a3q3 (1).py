@@ -35,4 +35,21 @@ def sumnc(node_chain):
     Return
     :return: the sum of the data values in the node chain
     """
+    if node_chain is None:
+        return 0
+
+    current = node_chain
+    total_sum = 0
+
+    while current is not None:
+        total_sum += current.get_data()
+        current = current.get_next()
+
+    return total_sum
+
+
+empty_chain = None
+chain = n.Node(1, n.Node(2, n.Node(3)))
+print('empty chain has the sum', sumnc(empty_chain))
+print('chain has the sum', sumnc(chain))
 
