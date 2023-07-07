@@ -78,3 +78,24 @@ chain = n.Node(1, n.Node(2, n.Node(1)))
 
 print('empty chain has', count_in(empty_chain, 1), 'occurrences of the value 1')
 print('chain has', count_in(chain, 1), 'occurrences of the value 1')
+def replace_in(node_chain, target, replacement):
+    """
+    Purpose:
+    Replaces each occurrence of the target value with the replacement
+    Pre-conditions:
+    :param node_chain: a node-chain, possibly empty
+    :param target: a value that might appear in the node chain
+    :param replacement: the value to replace the target
+    Post-conditions:
+    Each occurrence of the target value in the chain is replaced with
+    the replacement value.
+    Return:
+    None
+    """
+    current = node_chain
+
+    while current is not None:
+        if current.get_data() == target:
+            current.set_data(replacement)
+        current = current.get_next()
+
