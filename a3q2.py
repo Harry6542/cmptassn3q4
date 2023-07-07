@@ -18,4 +18,8 @@ import node as n
 
 
 def to_string(node_chain):
+    """
+        Create a string representation of the node chain. E.g.,
+        [ 1 | *-]-->[ 2 | *-]-->[ 3 | / ]
+        """
 
