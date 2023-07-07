@@ -29,5 +29,10 @@ def to_string(node_chain):
     # walk along the chain
     walker = node_chain
     result = '[ {} |'.format(str(walker.get_data()))
+    while walker.get_next() is not None:
+        walker = walker.get_next()
+        value = walker.get_data()
+        # represent the next with an arrow-like figure
+        result += ' *-]-->[ {} |'.format(str(value))
 
 
