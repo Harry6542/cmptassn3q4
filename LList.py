@@ -37,3 +37,15 @@ class node(object):
         self.data = data
         self.next = next
     # Note: use the attributes directly; no setters or getters!
+class LList(object):
+    def __init__(self):
+        """
+        Purpose
+            creates an empty list
+        """
+        self._size = 0  # how many elements in the stack
+        self._head = None  # the node chain starts here; initially empty
+        self._tail = None
+        self._temp = None
+        self._counter = 0
+        self._prev = None
