@@ -86,3 +86,44 @@ class LList(object):
             self._tail = self._head
         else:
             self._head = node(val, self._head)
+    def append(self, val):
+        """
+        Purpose
+            Insert val at the end of the node chain
+        Preconditions:
+            :param val:   a value of any kind
+        Post-conditions:
+            The list increases in size.
+            The new value is last in the list.
+        Return:
+            :return None
+        """
+        self._size += 1
+        if self.is_empty():
+            self._head = node(val)
+            self._tail = self._head
+        else:
+            self._tail.next = node(val)
+            self._tail = self._tail.next
+
+    def get_index_of_value(self, val):
+        """
+        Purpose
+            Return the smallest index of the given val.
+        Preconditions:
+            :param val:   a value of any kind
+        Post-conditions:
+            none
+        Return:
+            :return True, idx if the val appears in self
+            :return False, None if the vale does not appear in self
+        """
+        self._temp = self._head
+        self._counter = 0
+        while self._temp is not None:
+            if self._temp.data == val:
+                return True, self._counter
+            else:
+                self._temp = self._temp.next
+                self._counter += 1
+        return False, None
