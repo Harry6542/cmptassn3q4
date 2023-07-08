@@ -49,3 +49,12 @@ class LList(object):
         self._temp = None
         self._counter = 0
         self._prev = None
+    def is_empty(self):
+        """
+        Purpose
+            Checks if the given list has no data in it
+        Return:
+            :return True if the list has no data, or False otherwise
+        """
+
+        return self._head is None
