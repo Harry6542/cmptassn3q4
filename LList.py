@@ -58,3 +58,31 @@ class LList(object):
         """
 
         return self._head is None
+    def size(self):
+        """
+        Purpose
+            Returns the number of data values in the given list
+        Return:
+            :return The number of data values in the list
+        """
+        return self._size
+
+    def prepend(self, val):
+        """
+        Purpose
+            Insert val at the front of the node chain
+        Preconditions:
+            :param val:   a value of any kind
+        Post-conditions:
+            The list increases in size.
+            The new value is at index 0.
+            The values previously in the list appear after the new value.
+        Return:
+            :return None
+        """
+        self._size += 1
+        if self.is_empty():
+            self._head = node(val)
+            self._tail = self._head
+        else:
+            self._head = node(val, self._head)
