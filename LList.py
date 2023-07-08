@@ -127,3 +127,91 @@ class LList(object):
                 self._temp = self._temp.next
                 self._counter += 1
         return False, None
+    def remove_from_front(self):
+        """
+        Purpose
+            Removes and returns the first value
+        Post-conditions:
+            The list decreases in size.
+            The returned value is no longer in in the list.
+        Return:
+            :return The pair (True, value) if self is not empty
+            :return The pair (False, None) if self is empty
+        """
+        if self.is_empty():
+            return False, None
+        else:
+            self._size -= 1
+            self._temp = self._head
+            if self._size == 0:
+                self._tail = self._head = None
+            else:
+                self._head = self._head.next
+            return True, self._temp.data
+
+    def remove_from_back(self):
+        """
+        Purpose
+            Removes and returns the last value
+        Post-conditions:
+            The list decreases in size.
+            The returned value is no longer in in the list.
+        Return:
+            :return The pair True, value if self is not empty
+            :return The pair False, None if self is empty
+        """
+        if self.is_empty():
+            return False, None
+        else:
+            self._size -= 1
+            self._temp = self._head
+            if self._size == 0:
+                self._head = self._tail = None
+            else:
+                self._prev = self._head
+                while self._temp != self._tail:
+                    self._prev = self._temp
+                    self._temp = self._temp.next
+                self._tail = self._prev
+                self._tail.next = None
+            return True, self._temp.data
+
+    def remove_from_back(self, idx):
+        """
+        Purpose
+            Return the value stored at the index idx
+        Preconditions:
+            :param idx:   a non-negative integer
+        Post-conditions:
+            none
+        Return:
+            :return (True, val) if val is stored at index idx and idx is valid
+            :return (False, None) if the idx is not valid for the list
+        """
+        self._temp = self._head
+        self._counter = 0
+        while self._temp is not None:
+            if self._counter == idx:
+                return True, self._temp.data
+            else:
+                self._temp = self._temp.next
+                self._counter += 1
+        return False, None
+
+    def set_data(self, idx, val):
+        """
+        Purpose
+            Store val at the index idx
+        Preconditions:
+            :param val:   a value of any kind
+            :param idx:   a non-negative integer
+        Post-conditions:
+            The value stored at index idx changes to val
+        Return:
+            :return True if the index was valid, False otherwise
+        """
+        if self.retrieve_data(idx)[0]:
+            self._temp.data = val
+            return True
+        else:
+            return False
